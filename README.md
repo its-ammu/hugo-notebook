@@ -4,16 +4,16 @@ A dotted-paper, notebook-feel Hugo theme for blogs. Built from scratch with no
 external font or JS dependencies — just one stylesheet and a tiny inline script
 for the dark-mode toggle.
 
-![Notebook screenshot](https://raw.githubusercontent.com/its-ammu/hugo-notebook/main/images/screenshot.png)
+Notebook screenshot
 
 ## Features
 
 - **Dotted-paper background** across the whole page
 - **Margin spine navigation** — a sticky vertical nav along a colored margin line
 - **Highlighter accents** — links and titles fill with a marker swipe on hover; nav
-  and tags use a sweeping underline
+and tags use a sweeping underline
 - **Dark mode** with a toggle, persisted in `localStorage` and applied before paint
-  (no flash). Honors a configurable default theme.
+(no flash). Honors a configurable default theme.
 - **Post cards** with summaries, reading time, tags, and a turned-up page corner
 - **System font stack** (matches the OS UI) — no web fonts to download
 - Responsive; the spine nav collapses to a top bar on small screens
@@ -115,11 +115,11 @@ All colors are CSS variables at the top of `assets/css/notebook.css` (light them
 Posts live under `content/posts/`. Front matter:
 
 ```toml
-+++
+---
 title = "My first post"
 date = 2026-01-01
 tags = ["hugo", "notebook"]
-+++
+---
 ```
 
 Tags and reading time appear automatically on cards and the post header.
