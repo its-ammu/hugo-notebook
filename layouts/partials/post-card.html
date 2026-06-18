@@ -1,0 +1,16 @@
+{{- /* A post card. Context: a Page. Used by home + list pages. */ -}}
+<article class="post-card">
+  <a class="post-card__link" href="{{ .RelPermalink }}">
+    <h3 class="post-card__title">{{ .Title }}</h3>
+  </a>
+  <div class="post-card__meta">
+    <span>{{ partial "icon.html" "calendar" }}{{ .Date.Format "Jan 2, 2006" }}</span>
+    <span>{{ partial "icon.html" "clock" }}{{ .ReadingTime }} min read</span>
+  </div>
+  {{ with .Summary }}<p class="post-card__summary">{{ . | plainify | truncate 150 }}</p>{{ end }}
+  {{ with .Params.tags }}
+  <div class="post-card__tags">
+    {{ range . }}<a class="chip" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>{{ end }}
+  </div>
+  {{ end }}
+</article>

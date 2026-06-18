@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="intro-card">
+  <span class="intro-card__tape" aria-hidden="true"></span>
+  <h1 class="intro-card__name">Hi, I'm {{ .Site.Params.author | default "there" }} <span class="wave" aria-hidden="true">👋</span></h1>
+  {{ with .Site.Params.profileMode.subtitle }}<p class="intro-card__role">{{ . }}</p>{{ end }}
+  {{ with .Site.Params.description }}<p class="intro-card__bio">{{ . }}</p>{{ end }}
+  <div class="intro-card__links">
+    {{ range .Site.Params.socialIcons }}
+      <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name | title }}" title="{{ .name | title }}">{{ partial "icon.html" .name }}</a>
+    {{ end }}
+  </div>
+</section>
+
+<section class="posts">
+  <h2 class="section-label">{{ partial "icon.html" "pencil" }}<span>Latest entries</span></h2>
+  <div class="card-grid">
+    {{ range (where .Site.RegularPages "Type" "posts") }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

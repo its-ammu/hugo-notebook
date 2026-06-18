@@ -1,0 +1,13 @@
+<aside class="rail">
+  <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+  {{ $cur := .RelPermalink }}
+  <nav class="spine-nav">
+    {{ range .Site.Menus.main }}
+      {{ $active := and (not .Params.external) (hasPrefix $cur (.URL | relLangURL)) }}
+      <a class="spine-link{{ if $active }} is-active{{ end }}" href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}{{ if .Params.external }}{{ partial "icon.html" "external" }}{{ end }}</a>
+    {{ end }}
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+    {{ partial "icon.html" "moon" }}{{ partial "icon.html" "sun" }}
+  </button>
+</aside>

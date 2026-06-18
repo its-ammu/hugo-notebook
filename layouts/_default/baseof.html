@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default "en" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="sheet">
+    {{ partial "sidebar.html" . }}
+    <div class="page-col">
+      <main class="paper">
+        {{ block "main" . }}{{ end }}
+      </main>
+      {{ partial "footer.html" . }}
+    </div>
+  </div>
+  <script>
+    (function () {
+      var btn = document.querySelector(".theme-toggle");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        if (isDark) {
+          document.documentElement.removeAttribute("data-theme");
+          try { localStorage.setItem("theme", "light"); } catch (e) {}
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          try { localStorage.setItem("theme", "dark"); } catch (e) {}
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

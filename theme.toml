@@ -1,0 +1,13 @@
+name = "Notebook"
+license = "MIT"
+licenselink = "https://github.com/its-ammu/hugo-notebook/blob/main/LICENSE"
+description = "A dotted-paper, notebook-feel blog theme with a margin spine nav, highlighter accents, and dark mode."
+homepage = "https://github.com/its-ammu/hugo-notebook"
+demosite = "https://its-ammu.github.io/hugo-notebook/"
+tags = ["blog", "minimal", "clean", "notebook", "dark mode", "responsive"]
+features = ["blog", "dark mode", "responsive", "dotted background", "tags", "syntax highlighting", "no external fonts"]
+min_version = "0.146.0"
+
+[author]
+  name = "Amuthavarsni"
+  homepage = "https://www.varsni.com"
