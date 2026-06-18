@@ -10,7 +10,7 @@
   {{ with .Summary }}<p class="post-card__summary">{{ . | plainify | truncate 150 }}</p>{{ end }}
   {{ with .Params.tags }}
   <div class="post-card__tags">
-    {{ range . }}<a class="chip" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>{{ end }}
+    {{ range . }}{{ $t := site.GetPage (printf "/tags/%s" (. | urlize)) }}<a class="chip" href="{{ with $t }}{{ .RelPermalink }}{{ else }}{{ (printf "/tags/%s/" (. | urlize)) | absLangURL }}{{ end }}">#{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 </article>

@@ -18,7 +18,7 @@
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
-{{ with .Site.Params.favicon }}<link rel="icon" href="{{ . | relURL }}">{{ end }}
+{{ with .Site.Params.favicon }}<link rel="icon" href="{{ . | relLangURL }}">{{ end }}
 
 {{ $css := resources.Get "css/notebook.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

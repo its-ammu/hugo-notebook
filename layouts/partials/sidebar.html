@@ -1,5 +1,5 @@
 <aside class="rail">
-  <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+  <a class="brand" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
   {{ $cur := .RelPermalink }}
   <nav class="spine-nav">
     {{ range .Site.Menus.main }}

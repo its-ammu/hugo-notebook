@@ -5,7 +5,7 @@
     <span>{{ partial "icon.html" "calendar" }}{{ .Date.Format (.Site.Params.DateFormat | default "January 2, 2006") }}</span>
     {{ if .Site.Params.ShowReadingTime }}<span>{{ partial "icon.html" "clock" }}{{ .ReadingTime }} min read</span>{{ end }}
     {{ with .Params.tags }}
-      <span class="tags">{{ range . }}<a href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>{{ end }}</span>
+      <span class="tags">{{ range . }}{{ $t := site.GetPage (printf "/tags/%s" (. | urlize)) }}<a href="{{ with $t }}{{ .RelPermalink }}{{ else }}{{ (printf "/tags/%s/" (. | urlize)) | absLangURL }}{{ end }}">#{{ . }}</a>{{ end }}</span>
     {{ end }}
   </div>
 
