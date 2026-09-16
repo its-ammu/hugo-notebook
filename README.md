@@ -4,7 +4,7 @@ A dotted-paper, notebook-feel Hugo theme for blogs. Built from scratch with no
 external font or JS dependencies — just one stylesheet and a tiny inline script
 for the dark-mode toggle.
 
-Notebook screenshot
+![Notebook screenshot](images/screenshot.png)
 
 ## Features
 
