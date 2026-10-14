@@ -14,7 +14,7 @@
 <section class="posts">
   <h2 class="section-label">{{ partial "icon.html" "pencil" }}<span>Latest entries</span></h2>
   <div class="card-grid">
-    {{ range (where .Site.RegularPages "Type" "posts") }}
+    {{ range (where .Site.RegularPages.ByDate.Reverse "Section" "ne" "") | first 10 }}
       {{ partial "post-card.html" . }}
     {{ end }}
   </div>
