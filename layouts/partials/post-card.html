@@ -4,7 +4,9 @@
     <h3 class="post-card__title">{{ .Title }}</h3>
   </a>
   <div class="post-card__meta">
-    <span>{{ partial "icon.html" "calendar" }}{{ .Date.Format "Jan 2, 2006" }}</span>
+    {{ if .Date }}
+    <span>{{ partial "icon.html" "calendar" }}{{ .Date.Format (.Site.Params.DateFormat | default "Jan 2, 2006") }}</span>
+    {{ end }}
     <span>{{ partial "icon.html" "clock" }}{{ .ReadingTime }} min read</span>
   </div>
   {{ with .Summary }}<p class="post-card__summary">{{ . | plainify | truncate 150 }}</p>{{ end }}

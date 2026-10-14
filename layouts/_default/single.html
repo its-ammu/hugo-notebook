@@ -2,7 +2,9 @@
 <article class="post">
   <h1 class="post-title">{{ .Title }}</h1>
   <div class="post-meta">
+    {{ if .Date }}
     <span>{{ partial "icon.html" "calendar" }}{{ .Date.Format (.Site.Params.DateFormat | default "January 2, 2006") }}</span>
+    {{ end }}
     {{ if .Site.Params.ShowReadingTime }}<span>{{ partial "icon.html" "clock" }}{{ .ReadingTime }} min read</span>{{ end }}
     {{ with .Params.tags }}
       <span class="tags">{{ range . }}{{ $t := site.GetPage (printf "/tags/%s" (. | urlize)) }}<a href="{{ with $t }}{{ .RelPermalink }}{{ else }}{{ (printf "/tags/%s/" (. | urlize)) | absLangURL }}{{ end }}">#{{ . }}</a>{{ end }}</span>
