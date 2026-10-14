@@ -382,14 +382,6 @@ a { color: var(--ink); text-decoration: none; }
 }
 .intro-card__links .icon { width: 20px; height: 20px; }
 
-.wave { display: inline-block; transform-origin: 70% 70%; }
-.intro-card:hover .wave { animation: wave 0.9s ease; }
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(18deg); }
-  60% { transform: rotate(-12deg); }
-}
-
 /* ---------- section label (small, below the masthead in hierarchy) ---------- */
 .section-label {
   display: inline-flex;
