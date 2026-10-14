@@ -46,4 +46,3 @@ theme = "notebook"
 
 [markup.highlight]
   style = "dracula"
-  noClasses = false
