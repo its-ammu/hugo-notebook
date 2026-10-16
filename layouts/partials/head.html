@@ -26,3 +26,5 @@
 {{ if and (eq (hugo.Environment) "production") .Site.Config.Services.GoogleAnalytics.ID }}
 {{ template "_internal/google_analytics.html" . }}
 {{ end }}
+
+{{ partial "head-end.html" . }}

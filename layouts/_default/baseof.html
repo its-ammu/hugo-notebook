@@ -5,10 +5,13 @@
 </head>
 <body>
   <div class="sheet">
-    {{ partial "sidebar.html" . }}
+    <aside class="rail">
+      {{ partial "sidebar.html" . }}
+    </aside>
     <div class="page-col">
       <main class="paper">
         {{ block "main" . }}{{ end }}
+        {{ partial "main-end.html" . }}
       </main>
       {{ partial "footer.html" . }}
     </div>
@@ -29,5 +32,6 @@
       });
     })();
   </script>
+  {{ partial "body-end.html" . }}
 </body>
 </html>

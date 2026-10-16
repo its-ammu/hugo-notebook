@@ -1,6 +1,14 @@
 {{ define "main" }}
 <section class="list-page">
   <h1 class="list-title">{{ .Title }}</h1>
+
+  {{ if .Content }}
+    <div class="ruled post-content">
+      {{ .Content }}
+      {{ partial "content-end.html" . }}
+    </div>
+   {{ end }}
+
   <ul class="tag-cloud">
     {{ range .Data.Terms.Alphabetical }}
     <li><a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a> <span class="count">{{ .Count }}</span></li>

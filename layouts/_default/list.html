@@ -1,7 +1,12 @@
 {{ define "main" }}
 <section class="list-page">
   <h1 class="list-title">{{ .Title }}</h1>
-  {{ with .Content }}<div class="ruled list-desc">{{ . }}</div>{{ end }}
+  {{ if .Content }}
+    <div class="ruled post-content">
+      {{ .Content }}
+      {{ partial "content-end.html" . }}
+    </div>
+  {{ end }}
 
   <div class="card-grid">
     {{ range .Pages }}
